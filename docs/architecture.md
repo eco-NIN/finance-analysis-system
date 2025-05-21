@@ -19,7 +19,10 @@
  ┌────────────┐                         ┌────────────┐
  │ MySQL数据库 │←保存/读取→(结果)         │ 文件系统   │←保存图表/CSV等
  └────────────┘                         └────────────┘
- 
+
+FastAPI + Vue3（Element Plus）项目目录结构，
+三个主要功能模块：数据爬虫、金融分析、机器学习预测，符合中大型工程的分层架构与现代最佳实践。
+✅ 顶层目录结构
 
 finance-analysis-system/
 │
@@ -111,3 +114,33 @@ finance-analysis-system/
 ├── .env                        # 环境变量配置
 ├── .gitignore
 └── README.md
+
+
+⸻
+
+✅ 架构解读（模块职责）
+
+模块	说明
+api/	路由层，处理请求与响应，依赖注入
+services/	每个子模块（crawler, analysis, prediction）是完全隔离、可复用的业务逻辑封装
+models/	SQLAlchemy ORM，数据库表结构
+schemas/	FastAPI 的 Pydantic 模型，用于请求参数和响应数据的结构
+core/	应用配置、数据库连接、日志等核心系统组件
+frontend/src/pages/	对应路由页面，分别实现爬虫、分析、预测、历史查询
+frontend/src/services/	所有后端接口统一封装，支持 axios 请求
+
+
+⸻
+
+✅ 可扩展性支持
+	•	支持未来添加 NLP分析模块、情感分析模块，只需在 services/ 下添加子目录，并在 api/ 中暴露接口即可。
+	•	支持任务调度/异步爬虫（可引入 Celery、aiohttp）
+	•	可拓展身份认证（OAuth2、JWT）放在 core/security.py
+
+⸻
+
+如需，我可以：
+	•	✅ 继续生成：基础的 main.py、某模块 service 样例、router 注册示例；
+	•	✅ 继续生成：Vue3 初始化模板，搭建 Home.vue + Element Plus 页面框架。
+
+你希望我从哪一部分开始？

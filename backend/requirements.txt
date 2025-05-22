@@ -3,3 +3,12 @@ uvicorn
 sqlalchemy
 pydantic
 aiohttp
+
+# 使用 tushare 获取金融数据
+
+tushare
+sqlalchemy
+pymysql
+
+# 配置文件 core/config.py
+pydantic-settings

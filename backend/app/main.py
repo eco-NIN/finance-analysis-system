@@ -5,9 +5,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# from app.core.config import settings
-# from app.core.database import engine, Base
-# from app.api.v1 import crawler, analysis, prediction, file
+# from core.config import settings
+# from core.database import engine, Base
+from app.api.v1 import crawler, analysis, prediction#, file
 
 # 创建数据库表（如果没有的话）
 # Base.metadata.create_all(bind=engine)
@@ -28,12 +28,15 @@ app.add_middleware(
 )
 
 # 路由挂载
-# app.include_router(crawler.router, prefix="/api/v1/crawler", tags=["数据爬虫"])
-# app.include_router(analysis.router, prefix="/api/v1/analysis", tags=["金融分析"])
-# app.include_router(prediction.router, prefix="/api/v1/prediction", tags=["机器学习预测"])
+app.include_router(crawler.router, prefix="/api/v1/crawler", tags=["数据爬虫"])
+app.include_router(analysis.router, prefix="/api/v1/analysis", tags=["金融分析"])
+app.include_router(prediction.router, prefix="/api/v1/prediction", tags=["机器学习预测"])
 # app.include_router(file.router, prefix="/api/v1/file", tags=["文件处理"])
-
 # 健康检查
 @app.get("/ping", tags=["系统"])
 def ping():
     return {"message": "pong"}
+
+from app.api.v1 import crawler
+
+app.include_router(crawler.router, prefix="/api/v1/crawler", tags=["抓取tushare数据测试"])

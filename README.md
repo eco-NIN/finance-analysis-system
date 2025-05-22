@@ -59,3 +59,4 @@ DATABASE_NAME=finance
 DATABASE_URL=mysql+pymysql://root:12345678@localhost:3306/finance
 ```
 
+ljx

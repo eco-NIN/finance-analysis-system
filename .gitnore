@@ -1,1 +1,39 @@
-.env
+# --- OS & Editor 缓存 ---
+.DS_Store
+Thumbs.db
+
+# --- Jupyter 等其他缓存 ---
+.ipynb_checkpoints/
+
+# --- Logs ---
+*.log
+logs/
+
+# 忽略 PyCharm 配置
+.idea/
+
+# Python 后端
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+backend/__pycache__/
+backend/*.pyc
+backend/env/
+backend/venv/
+
+# Node 前端
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.vscode/
+/frontend/.env
+
+# 编辑器配置
+.idea/
+.vscode/
+
+# 系统文件
+.DS_Store
+Thumbs.db

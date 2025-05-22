@@ -7,6 +7,12 @@
 - 🤖 机器学习预测模块（模型训练与预测展示）
 
 ---
+### 前端页面
+![img.png](img.png)
+### 后端接口页面
+![img_1.png](img_1.png)
+
+---
 
 ## 🧰 技术栈
 
@@ -40,3 +46,6 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
+> 不用看
+> 
+> npm init vite@latest frontend

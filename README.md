@@ -8,10 +8,9 @@
 
 ---
 ### 前端页面
-![img.png](img.png)
+![img1.png](docs/img1.png)
 ### 后端接口页面
-![img_1.png](img_1.png)
-
+![img.png](docs/img.png)
 ---
 
 ## 🧰 技术栈

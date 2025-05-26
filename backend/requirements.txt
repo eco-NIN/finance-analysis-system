@@ -3,6 +3,7 @@ uvicorn
 sqlalchemy
 pydantic
 aiohttp
+matplotlib
 
 # 使用 tushare 获取金融数据
 

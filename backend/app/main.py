@@ -21,7 +21,7 @@ app = FastAPI(
 # 允许跨域
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 或配置指定前端地址，例如 "http://localhost:5173"
+    allow_origins=["http://localhost:5173"],  # 或配置指定前端地址，例如 "http://localhost:5173"
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -31,7 +31,7 @@ app.add_middleware(
 app.include_router(crawler.router, prefix="/api/v1/crawler", tags=["数据爬虫"])
 app.include_router(analysis.router, prefix="/api/v1/analysis", tags=["金融分析"])
 app.include_router(prediction.router, prefix="/api/v1/prediction", tags=["机器学习预测"])
-# app.include_router(file.router, prefix="/api/v1/file", tags=["文件处理"])
+#app.include_router(file.router, prefix="/api/v1/file", tags=["文件处理"])
 # 健康检查
 @app.get("/ping", tags=["系统"])
 def ping():
@@ -40,3 +40,5 @@ def ping():
 from app.api.v1 import crawler
 
 app.include_router(crawler.router, prefix="/api/v1/crawler", tags=["抓取tushare数据测试"])
+
+

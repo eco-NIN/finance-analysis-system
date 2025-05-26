@@ -9,9 +9,12 @@ def analyze(
     start_date: str = Query(..., description="开始日期"),
     end_date: str = Query(..., description="结束日期")
 ):
-    result_data, image_base64 = analyze_stock_data(stock_code, start_date, end_date)
+    result_data, image_base64_1,image_base64_2,image_base64_3,image_base64_4 = analyze_stock_data(stock_code, start_date, end_date)
     return {
         "result": result_data,
-        "image_base64": image_base64
+        "image_base64_1": image_base64_1,
+        "image_base64_2": image_base64_2,
+        "image_base64_3": image_base64_3,
+        "image_base64_4": image_base64_4
     }
 

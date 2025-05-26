@@ -37,13 +37,15 @@ npm install
 npm run dev
 ```
 ## 启动后端
+
+
 ```bash
 cd backend
 python -m venv venv         # 或 conda create --name faenv python=3.10
-source venv/bin/activate
+source venv/bin/activate #windows venv/Scripts/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
-```
+```cd
 
 > 不用看
 > 

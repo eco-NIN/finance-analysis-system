@@ -48,3 +48,15 @@ uvicorn app.main:app --reload
 > 不用看
 > 
 > npm init vite@latest frontend
+
+## 配置后端数据库.env 在backend中
+```angular2html
+DATABASE_HOST=localhost
+DATABASE_PORT=3306
+DATABASE_USER=root
+DATABASE_PASSWORD=12345678
+DATABASE_NAME=finance
+DATABASE_URL=mysql+pymysql://root:12345678@localhost:3306/finance
+```
+
+ljx

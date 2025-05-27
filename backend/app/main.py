@@ -37,8 +37,4 @@ app.include_router(prediction.router, prefix="/api/v1/prediction", tags=["机器
 def ping():
     return {"message": "pong"}
 
-from app.api.v1 import crawler
-
-app.include_router(crawler.router, prefix="/api/v1/crawler", tags=["抓取tushare数据测试"])
-
 

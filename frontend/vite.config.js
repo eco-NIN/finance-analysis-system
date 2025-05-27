@@ -1,3 +1,4 @@
+// https://vite.dev/config/
 // vite.config.js
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -15,4 +16,9 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
   ],
+  server: {
+    proxy: {
+      '/api': 'http://localhost:8000', // 或你 FastAPI 的运行端口
+    },
+  },
 })

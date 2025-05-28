@@ -70,7 +70,7 @@
 
 <template>
   <div>
-    <h2>🕸️ 数据爬虫页面</h2>
+    <h2>🕸️ 数据爬虫</h2>
     <el-button @click="fetchStockData" type="primary" :loading="fetchLoading">
       抓取最新数据
     </el-button>

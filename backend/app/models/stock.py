@@ -4,7 +4,8 @@
 # app/models/stock.py
 
 from sqlalchemy import Column, String, Float, Integer
-from app.core.database import Base
+# from app.core.database import Base
+from app.models.base import Base
 
 class StockBasic(Base):
     __tablename__ = "stock_basic"

@@ -8,10 +8,8 @@ from app.core.config import settings
 
 # 创建数据库引擎（使用 DATABASE_URL）
 engine = create_engine(settings.database_url, pool_pre_ping=True)
-
 # 创建 SessionLocal，每次请求都会用这个类创建 session
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
 # FastAPI 依赖注入：获取数据库 session 的函数
 def get_db():
     db = SessionLocal()
@@ -19,6 +17,9 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
+
 
 # # 初始化数据库（可在 main.py 中或命令行中执行一次）转移到了initial_data
 # def init_db():

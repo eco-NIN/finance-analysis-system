@@ -122,7 +122,7 @@
 import { ref, reactive } from 'vue'
 import { ElMessage } from 'element-plus'
 import { useStockStore } from '../stores/useStockStore'
-import { fetchAnalysisResults } from '../analysis'  // 你的接口调用方法
+import { fetchAnalysisResults } from '../services/analysis.js'  // 你的接口调用方法
 
 const form = reactive({
   ts_code: '600519.SH',  // 默认示例代码

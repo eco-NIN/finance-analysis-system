@@ -13,3 +13,7 @@ pymysql
 
 # 配置文件 core/config.py
 pydantic-settings
+
+
+
+cryptography

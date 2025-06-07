@@ -10,6 +10,7 @@
 
 from app.core.database import Base, engine
 from app.models import stock  # 确保导入模型
+from app.models import prediction
 
 def init():
     print("Creating tables...")

@@ -33,6 +33,13 @@
               <el-button type="warning" @click="goTo('prediction')">进入</el-button>
             </el-card>
           </el-col>
+          <el-col :span="8">
+            <el-card shadow="hover">
+              <h3>东方财富预测</h3>
+              <p>爬取 + 清洗 + 预测一体化。</p>
+              <el-button type="info" @click="goTo('dongfang')">进入</el-button>
+            </el-card>
+          </el-col>
         </el-row>
       </el-main>
     </el-container>

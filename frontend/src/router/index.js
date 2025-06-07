@@ -5,6 +5,7 @@ import Crawler from '../pages/Crawler.vue'
 import Analysis from '../pages/Analysis.vue'
 import Prediction from '../pages/Prediction.vue'
 import History from '../pages/History.vue'
+import Dongfang from "../pages/Dongfang.vue";
 
 const routes = [
   { path: '/', component: Home },
@@ -12,6 +13,7 @@ const routes = [
   { path: '/analysis', component: Analysis },
   { path: '/prediction', component: Prediction },
   { path: '/history', component: History },
+  { path: '/dongfang', component: Dongfang}
 ]
 
 const router = createRouter({

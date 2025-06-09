@@ -22,8 +22,15 @@
           </el-form-item>
           <el-form-item label="预测算法">
             <el-select v-model="form.algorithm" placeholder="请选择" style="width: 100px;">
-              <el-option label="回归" value="回归" />
-              <el-option label="分类" value="分类" />
+<!--              线性回归-->
+<!--              随机森林-->
+<!--              逻辑回归-->
+<!--              支持向量机-->
+              <el-option label="线性回归" value="回归" />
+              <el-option label="随机森林" value="随机森林" />
+
+              <el-option label="逻辑回归" value="逻辑回归" />
+              <el-option label="支持向量机" value="支持向量机" />
             </el-select>
           </el-form-item>
           <el-button type="primary" @click="fetchPrediction">开始预测</el-button>
@@ -73,12 +80,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import {reactive, ref} from 'vue'
 import axios from 'axios'
 // import { fetchPrediction } from '../services/Dongfang.js'
 
+
 const form = ref({
-  stock_code: '',
+  stock_code: '600519',
   data_type: '',
   algorithm: '',
 })

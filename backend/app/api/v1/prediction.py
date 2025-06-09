@@ -1,16 +1,7 @@
 # @Author  : eco
 # @Date    :2025/5/21 21:26
 # @Function:机器学习预测模块测试路由
-import json
-
 from fastapi import APIRouter, HTTPException
-# from app.services.analysis.data_fetcher import fetch_stock_data  # 复用已有分析模块
-# from app.services.prediction.predict_model import run_predictions
-# from app.schemas.prediction import PredictRequest
-
-
-# app/api/v1/prediction.py
-from fastapi import APIRouter, Query
 from app.services.prediction.extractor import fetch_dongfang_data
 from app.services.prediction.cleaner import clean_data
 from app.services.prediction.trainer import train_and_predict
@@ -19,14 +10,10 @@ from app.models.prediction import PredictionResult
 from app.core.database import get_db
 from sqlalchemy.orm import Session
 from fastapi import Depends
-
 from app.services.prediction.entry import run_prediction_pipeline
-
 from app.services.prediction.tushare_predict import run_predictions
-
 from app.schemas.prediction import PredictRequest
-
-from app.services.analysis.data_fetcher import fetch_stock_data
+from app.services.analysis.data_fetcher import fetch_stock_data # 复用已有分析模块
 
 router = APIRouter()
 

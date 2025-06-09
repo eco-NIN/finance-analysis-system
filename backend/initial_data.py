@@ -2,6 +2,8 @@
 # @Date    :2025/5/21 20:48
 # @Function:初始化本地数据库
 from app.core.database import Base, engine
+from app.models import prediction
+from app.models import stock
 
 def init():
     print("Creating tables...")

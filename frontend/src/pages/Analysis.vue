@@ -1,7 +1,7 @@
 <template>
   <div class="page-container">
     <div class="header-container">
-      <h2 class="page-title">🏦 金融分析页面</h2>
+      <h2 class="page-title">🏦 金融数据分析</h2>
     </div>
 
     <el-form :model="form" label-width="100px" class="form-container">

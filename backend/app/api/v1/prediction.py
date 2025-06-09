@@ -20,7 +20,7 @@ from app.core.database import get_db
 from sqlalchemy.orm import Session
 from fastapi import Depends
 
-from app.services.prediction.pipeline import run_prediction_pipeline
+from app.services.prediction.entry import run_prediction_pipeline
 
 from app.services.prediction.tushare_predict import run_predictions
 

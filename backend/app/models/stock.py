@@ -1,10 +1,7 @@
-# @Author  : eco
+# @Author  :刘佳兴
 # @Date    :2025/5/22 09:54
-# @Function: 定义金融数据模型
-# app/models/stock.py
-
-from sqlalchemy import Column, String, Float, Integer
-# from app.core.database import Base
+# @Function: tushare数据模型
+from sqlalchemy import Column, String
 from app.models.base import Base
 
 class StockBasic(Base):

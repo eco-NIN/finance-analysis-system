@@ -6,11 +6,9 @@ from sqlalchemy.orm import Session
 import json
 from datetime import datetime
 import pandas as pd
-
 from app.models.prediction import RawData, CleanData
 from app.models.prediction import PredictionResult
 from app.schemas.prediction import PredictionRequest
-
 
 def store_raw_data(db: Session, request: PredictionRequest, raw_data: pd.DataFrame):
     raw_json = raw_data.to_dict(orient="records")  # 转为 list[dict]
@@ -37,23 +35,36 @@ def store_clean_data(db: Session, request: PredictionRequest, cleaned_data: pd.D
                 date=row["date"],
                 open=row["open"],
                 close=row["close"],
-                change_pct=row["change_pct"]
+                high=row["high"],          # 新增
+                low=row["low"],            # 新增
+                volume=row["volume"],      # 新增
+                change_pct=row["change_pct"],
+                ma_5=row["ma_5"],         # 新增
+                ma_10=row["ma_10"],       # 新增
+                volatility=row["volatility"],  # 新增
+                created_at=datetime.now()
             ))
     db.commit()
 
-    # db.add(CleanData(
-    #     stock_code=request.stock_code,
-    #     data_type=request.data_type,
-    #     content=json.dumps(cleaned_data.to_dict(orient="records")),
-    #     created_at=datetime.now()
-    # ))
-
-
 def store_prediction_result(db: Session, request: PredictionRequest, result: dict):
+    """
+    存储预测结果（适配回归和分类任务）
+    """
+    # 根据任务类型选择存储的评估指标
+    if request.task_type == "回归":
+        metric_name = "mse"
+        metric_value = result["metrics"]["mse"]
+    else:  # 分类任务
+        metric_name = "accuracy"
+        metric_value = result["metrics"]["accuracy"]
+
     db.add(PredictionResult(
         stock_code=request.stock_code,
+        task_type=request.task_type,      # 新增字段：任务类型
+        algorithm=request.algorithm,      # 新增字段：算法名称
         prediction=json.dumps(result["prediction"]),
-        mse=result["metrics"]["mse"],
+        metric_name=metric_name,          # 动态存储指标名称
+        metric_value=metric_value,        # 动态存储指标值
         created_at=datetime.now()
     ))
     db.commit()

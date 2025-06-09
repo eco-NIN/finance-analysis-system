@@ -17,11 +17,3 @@ def get_db():
         yield db
     finally:
         db.close()
-
-
-
-
-# # 初始化数据库（可在 main.py 中或命令行中执行一次）转移到了initial_data
-# def init_db():
-#     import app.models  # 确保模型都被导入了
-#     Base.metadata.create_all(bind=engine)

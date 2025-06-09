@@ -1,8 +1,7 @@
-# @Author  : eco
+# @Author  :郭宇哲
 # @Date    :2025/6/7 16:34
-# @Function:
+# @Function:东方财富爬虫原始数据+清洗数据+预测数据
 from sqlalchemy import Column, Integer, String, Float, DateTime, JSON
-# from .base import Base
 from app.models.base import Base
 from sqlalchemy.dialects.mysql import LONGTEXT
 
@@ -34,13 +33,3 @@ class PredictionResult(Base):
     mse = Column(Float)
     created_at = Column(DateTime)
 
-
-# class PredictionResult(Base):
-#     __tablename__ = "prediction_results"
-#
-#     id = Column(Integer, primary_key=True, index=True)
-#     stock_code = Column(String(20))
-#     data_type = Column(String(20))
-#     algorithm = Column(String(20))
-#     prediction = Column(JSON)
-#     metrics = Column(JSON)

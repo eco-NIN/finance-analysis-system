@@ -117,7 +117,7 @@ const onPredict = async () => {
 <style scoped>
 /* 毛玻璃效果 */
 .page-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.8);

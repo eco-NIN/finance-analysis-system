@@ -18,7 +18,7 @@ export default defineConfig({
   ],
   server: {
     proxy: {
-      '/api': 'http://localhost:8000', // 或你 FastAPI 的运行端口
+      '/api': 'http://localhost:8000', // FastAPI 的运行端口
     },
   },
 })

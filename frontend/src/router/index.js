@@ -4,7 +4,6 @@ import Home from '../pages/Home.vue'
 import Crawler from '../pages/Crawler.vue'
 import Analysis from '../pages/Analysis.vue'
 import Prediction from '../pages/Prediction.vue'
-import History from '../pages/History.vue'
 import Dongfang from "../pages/Dongfang.vue";
 
 const routes = [
@@ -12,7 +11,6 @@ const routes = [
   { path: '/crawler', component: Crawler },
   { path: '/analysis', component: Analysis },
   { path: '/prediction', component: Prediction },
-  { path: '/history', component: History },
   { path: '/dongfang', component: Dongfang}
 ]
 

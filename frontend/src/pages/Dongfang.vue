@@ -1,11 +1,10 @@
 <!-- @Author  : eco
      @Date    : 2025/6/7
      @Function: 东方财富数据爬取预测页面 -->
-
 <template>
-  <div class="dongfang">
+  <div class="page-container">
     <el-container>
-      <el-header>
+      <el-header style="text-align: center">
         <h2>东方财富数据爬取与预测</h2>
       </el-header>
 
@@ -118,8 +117,16 @@ const fetchPrediction = async () => {
 </script>
 
 <style scoped>
-.dongfang {
-  padding: 40px;
+/* 毛玻璃效果容器 */
+.page-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .card {
   margin-top: 20px;
